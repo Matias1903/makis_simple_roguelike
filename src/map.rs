@@ -114,6 +114,8 @@ impl BaseMap for Map {
 }
 
 pub fn draw_map(ecs:&World, ctx: &mut Rltk){
+
+    
     let map = ecs.fetch::<Map>();
 
     let mut x = 0;
@@ -125,7 +127,7 @@ pub fn draw_map(ecs:&World, ctx: &mut Rltk){
             match tile{
                 TileType::Floor => {
                     glyph = rltk::to_cp437('.');
-                    fg = RGB::from_f32(0.0, 1.0, 0.5);
+                    fg = RGB::from_f32(0.0, 0.5, 0.5);
                 }
                 TileType::Wall => {
                     glyph = rltk::to_cp437('#');
